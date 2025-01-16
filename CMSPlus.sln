@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSPlus.Presentation", "CMSPlus.Presentation\CMSPlus.Presentation.csproj", "{52C33860-4571-478D-8A7D-3E82C8588F34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSPlus.Domain", "CMSPlus.Domain\CMSPlus.Domain.csproj", "{8CF41CAC-ECD4-41ED-B3F7-E0C9F838B66B}"
@@ -24,5 +27,11 @@ Global
 		{47D6DBC7-B1A6-4278-A19A-88BED310199E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47D6DBC7-B1A6-4278-A19A-88BED310199E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47D6DBC7-B1A6-4278-A19A-88BED310199E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDB652DB-FD14-4650-A1A8-F1A46EBCD009}
 	EndGlobalSection
 EndGlobal

@@ -150,4 +150,6 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\richtexteditor\runtime\richtexteditor_preview.css" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\richtexteditor\runtime\richtexteditor_preview.js" />
     </ItemGroup>
+
+    <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 </Project>
