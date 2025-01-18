@@ -30,6 +30,8 @@
                 <a asp-controller="Topic" asp-action="Edit" asp-route-id="@topic.Id" class="btn btn-primary m-auto">Edit</a>
                 <a asp-controller="Topic" asp-action="Delete" asp-route-id="@topic.Id" class="btn btn-primary m-auto">Delete</a>
                 <a asp-controller="Topic" asp-action="Details" asp-route-systemname="@topic.SystemName" class="btn btn-primary m-auto">Details</a>
+                <a asp-controller="Comment" asp-action="Index" asp-route-topicId="@topic.Id" class="btn btn-secondary m-auto">View Comments</a>
+                <a asp-controller="Comment" asp-action="Create" asp-route-topicId="@topic.Id" class="btn btn-success m-auto">Add Comment</a>
             </div>
 
         </div>
