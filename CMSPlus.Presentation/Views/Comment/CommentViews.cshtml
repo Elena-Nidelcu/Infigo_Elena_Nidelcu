@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CMSPlus.Domain.Models.CommentModels.CommentModel>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container mt-3">
+    <h1 class="text-center">Comments</h1>
+    <hr />
+
+    <div class="mb-4">
+        <a class="btn btn-success" asp-controller="Comment" asp-action="Create" asp-route-topicId="@ViewData["TopicId"]">Add New Comment</a>
+        <a class="btn btn-primary" asp-controller="Topic" asp-action="Index">Back to Topics</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <p class="text-muted">No comments available for this topic.</p>
+    }
+    else
+    {
+        foreach (var comment in Model)
+        {
+            <div class="border p-3 mb-3">
+                <p><strong>@comment.FullName</strong> (<span class="text-muted">@comment.CreatedOnUtc</span>)</p>
+                <p>@comment.Content</p>
+                <div class="text-end">
+                    <form asp-controller="Comment" asp-action="Delete" method="post" class="d-inline">
+                        <input type="hidden" name="commentId" value="@comment.Id" />
+                        <input type="hidden" name="topicId" value="@ViewData["TopicId"]" />
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </div>
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,17 @@
+﻿@model CMSPlus.Domain.Models.CommentModels.CommentCreateModel
+
+<div class="container mt-3">
+    <h2>Add Comment</h2>
+    <form asp-controller="Comment" asp-action="Create" method="post">
+        <input type="hidden" asp-for="TopicId" />
+        <div class="mb-3">
+            <label asp-for="Content" class="form-label">Your Comment</label>
+            <textarea asp-for="Content" class="form-control" rows="5"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AuthorName" class="form-label">Your Name</label>
+            <input asp-for="AuthorName" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+    </form>
+</div>
