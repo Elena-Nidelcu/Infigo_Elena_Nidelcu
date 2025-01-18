@@ -1,15 +1,25 @@
-namespace CMSPlus.Domain.Models.TopicModels;
+using System;
+using System.Collections.Generic;
+using CMSPlus.Domain.Models.CommentModels;
 
-public class TopicModel:BaseTopicModel
+namespace CMSPlus.Domain.Models.TopicModels
 {
-    public TopicModel()
+    public class TopicModel : BaseTopicModel
     {
-        UpdatedOnUtc = CreatedOnUtc = DateTime.UtcNow;
+        public TopicModel()
+        {
+            UpdatedOnUtc = CreatedOnUtc = DateTime.UtcNow;
+            Comments = new List<CommentModel>();
+        }
+
+        public int Id { get; set; }
+        public string SystemName { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
+        public DateTime? CreatedOnUtc { get; set; }
+        public DateTime? UpdatedOnUtc { get; set; }
+
+        // List of associated comments
+        public List<CommentModel> Comments { get; set; }
     }
-    public int Id { get; set; }
-    public string SystemName { get; set; }
-    public string Title { get; set; }
-    public string Body { get; set; }
-    public DateTime? CreatedOnUtc { get; set; }
-    public DateTime? UpdatedOnUtc { get; set; }
 }
