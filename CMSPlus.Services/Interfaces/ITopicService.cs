@@ -10,4 +10,6 @@ public interface ITopicService
     public Task Create(TopicEntity entity);
     public Task Update(TopicEntity entity);
     public Task Delete(int id);
+    Task AddComment(int topicId, CommentEntity comment);
+    Task DeleteComment(int topicId, int commentId);
 }

@@ -42,4 +42,35 @@ public class TopicService:ITopicService
     {
         await _repository.Delete(id);
     }
+    public async Task AddComment(int topicId, CommentEntity comment)
+    {
+        var topic = await _repository.GetById(topicId);
+        if (topic == null)
+        {
+            throw new Exception("Topic not found.");
+        }
+
+        topic.Comments ??= new List<CommentEntity>();
+        topic.Comments.Add(comment);
+        await _repository.Update(topic);
+    }
+
+    // Delete a comment from a topic
+    public async Task DeleteComment(int topicId, int commentId)
+    {
+        var topic = await _repository.GetById(topicId);
+        if (topic == null)
+        {
+            throw new Exception("Topic not found.");
+        }
+
+        var comment = topic.Comments?.FirstOrDefault(c => c.Id == commentId);
+        if (comment == null)
+        {
+            throw new Exception("Comment not found.");
+        }
+
+        topic.Comments.Remove(comment);
+        await _repository.Update(topic);
+    }
 }
